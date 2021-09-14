@@ -5,7 +5,7 @@ import MainScreen from '../main-screen/main-screen';
 
 function App() {
   return (
-    <MainScreen />
+    <MainScreen /> 
   );
 }
 
