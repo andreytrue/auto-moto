@@ -7,7 +7,7 @@ function Slider() {
 
   const sliderImageList = new Array(3).fill('slider');
 
-  const onChangeHandler = (evt) => {
+  const onChange = (evt) => {
     setMainPicture(evt.target.dataset.id);
   }
 
@@ -25,7 +25,7 @@ function Slider() {
     }
   }
 
-  const onLeftButtonClickHandler = (evt) => {
+  const onLeftButtonClick = (evt) => {
     evt.preventDefault();
     const currentPic = mainPicture - 1;
 
@@ -33,7 +33,7 @@ function Slider() {
     setButtons(currentPic);
   }
 
-  const onRightButtonClickHandler = (evt) => {
+  const onRightButtonClick = (evt) => {
     evt.preventDefault();
     const currentPic = mainPicture + 1;
 
@@ -48,7 +48,7 @@ function Slider() {
       <img className="slider__image" src={`../../img/slide-${mainPicture}-desktop@1x.jpg`} alt='Фотография автомобиля' />
 
       <form className="slider__preview">
-        <fieldset className="slider__wrapper" onChange={onChangeHandler}>
+        <fieldset className="slider__wrapper" onChange={onChange}>
           {sliderImageList.map((item, id) => (
             <React.Fragment key={item + id}>
               <input 
@@ -70,14 +70,14 @@ function Slider() {
         <button 
         className={`slider__button slider__button--left ${leftButtonDisabled ? `slider__button--disabled`: ''}`} 
         aria-label="Левая кнопка слайдера"
-        onClick={onLeftButtonClickHandler} 
+        onClick={onLeftButtonClick} 
         disabled={leftButtonDisabled}
         >
         </button>
         <button 
         className={`slider__button slider__button--right ${rightButtonDisabled ? `slider__button--disabled`: ''}`} 
         aria-label="Правая кнопка слайдера"
-        onClick={onRightButtonClickHandler} 
+        onClick={onRightButtonClick} 
         disabled={rightButtonDisabled}
         >
         </button>

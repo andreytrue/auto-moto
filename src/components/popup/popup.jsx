@@ -66,7 +66,7 @@ function Popup({closePopup, addNewReviews}) {
     setHoverStar(0);
   }
 
-  const onStarClickHandler = (evt) => {
+  const onStarClick = (evt) => {
     evt.preventDefault();
 
     setStarRate(evt.target.dataset.id);
@@ -104,7 +104,7 @@ function Popup({closePopup, addNewReviews}) {
                   tabIndex={5}
                   htmlFor={`star-${index}`} 
                   data-id={item}
-                  onClick={onStarClickHandler} 
+                  onClick={onStarClick} 
                   onMouseOver={onStarMouseOver}
                   onMouseOut={onStarMouseOut}
                   >Рейтинг</label>
